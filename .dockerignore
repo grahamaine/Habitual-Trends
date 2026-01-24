@@ -1,0 +1,361 @@
+# flyctl launch added from .gitignore
+**\<<<<<<< HEAD
+# Logs
+**\logs
+**\*.log
+**\npm-debug.log*
+**\yarn-debug.log*
+**\yarn-error.log*
+**\pnpm-debug.log*
+**\lerna-debug.log*
+
+**\node_modules
+**\dist
+**\dist-ssr
+**\*.local
+
+# Editor directories and files
+**\.vscode\*
+!**\.vscode\extensions.json
+**\.idea
+**\.DS_Store
+**\*.suo
+**\*.ntvs*
+**\*.njsproj
+**\*.sln
+**\*.sw?
+**\=======
+**\__pycache__
+**\*.db
+**\assets\external
+**\.web
+**\*.py[cod]
+**\.states
+target
+**\>>>>>>> 6a2561c (Initial commit for Habitual Trends)
+
+# flyctl launch added from .venv\Lib\site-packages\langserve\chat_playground\.gitignore
+# Logs
+.venv\Lib\site-packages\langserve\chat_playground\**\logs
+.venv\Lib\site-packages\langserve\chat_playground\**\*.log
+.venv\Lib\site-packages\langserve\chat_playground\**\npm-debug.log*
+.venv\Lib\site-packages\langserve\chat_playground\**\yarn-debug.log*
+.venv\Lib\site-packages\langserve\chat_playground\**\yarn-error.log*
+.venv\Lib\site-packages\langserve\chat_playground\**\pnpm-debug.log*
+.venv\Lib\site-packages\langserve\chat_playground\**\lerna-debug.log*
+
+.venv\Lib\site-packages\langserve\chat_playground\**\node_modules
+.venv\Lib\site-packages\langserve\chat_playground\**\dist
+.venv\Lib\site-packages\langserve\chat_playground\**\dist-ssr
+.venv\Lib\site-packages\langserve\chat_playground\**\*.local
+
+# Editor directories and files
+.venv\Lib\site-packages\langserve\chat_playground\**\.vscode\*
+!.venv\Lib\site-packages\langserve\chat_playground\**\.vscode\extensions.json
+.venv\Lib\site-packages\langserve\chat_playground\**\.idea
+.venv\Lib\site-packages\langserve\chat_playground\**\.DS_Store
+.venv\Lib\site-packages\langserve\chat_playground\**\*.suo
+.venv\Lib\site-packages\langserve\chat_playground\**\*.ntvs*
+.venv\Lib\site-packages\langserve\chat_playground\**\*.njsproj
+.venv\Lib\site-packages\langserve\chat_playground\**\*.sln
+.venv\Lib\site-packages\langserve\chat_playground\**\*.sw?
+
+.venv\Lib\site-packages\langserve\chat_playground\**\.yarn
+
+!.venv\Lib\site-packages\langserve\chat_playground\**\dist
+
+# flyctl launch added from .venv\Lib\site-packages\langserve\playground\.gitignore
+# Logs
+.venv\Lib\site-packages\langserve\playground\**\logs
+.venv\Lib\site-packages\langserve\playground\**\*.log
+.venv\Lib\site-packages\langserve\playground\**\npm-debug.log*
+.venv\Lib\site-packages\langserve\playground\**\yarn-debug.log*
+.venv\Lib\site-packages\langserve\playground\**\yarn-error.log*
+.venv\Lib\site-packages\langserve\playground\**\pnpm-debug.log*
+.venv\Lib\site-packages\langserve\playground\**\lerna-debug.log*
+
+.venv\Lib\site-packages\langserve\playground\**\node_modules
+.venv\Lib\site-packages\langserve\playground\**\dist
+.venv\Lib\site-packages\langserve\playground\**\dist-ssr
+.venv\Lib\site-packages\langserve\playground\**\*.local
+
+# Editor directories and files
+.venv\Lib\site-packages\langserve\playground\**\.vscode\*
+!.venv\Lib\site-packages\langserve\playground\**\.vscode\extensions.json
+.venv\Lib\site-packages\langserve\playground\**\.idea
+.venv\Lib\site-packages\langserve\playground\**\.DS_Store
+.venv\Lib\site-packages\langserve\playground\**\*.suo
+.venv\Lib\site-packages\langserve\playground\**\*.ntvs*
+.venv\Lib\site-packages\langserve\playground\**\*.njsproj
+.venv\Lib\site-packages\langserve\playground\**\*.sln
+.venv\Lib\site-packages\langserve\playground\**\*.sw?
+
+.venv\Lib\site-packages\langserve\playground\**\.yarn
+
+!.venv\Lib\site-packages\langserve\playground\**\dist
+
+# flyctl launch added from .venv\Lib\site-packages\litellm\proxy\.gitignore
+.venv\Lib\site-packages\litellm\proxy\**\.env
+.venv\Lib\site-packages\litellm\proxy\**\secrets.toml
+
+# flyctl launch added from .web\.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+.web\_static
+
+# dependencies
+.web\node_modules
+.web\.pnp
+.web\**\.pnp.js
+
+# testing
+.web\coverage
+
+# next.js
+.web\.next
+.web\out
+
+# production
+.web\build
+
+# misc
+.web\**\.DS_Store
+.web\**\*.pem
+
+# debug
+.web\**\npm-debug.log*
+.web\**\yarn-debug.log*
+.web\**\yarn-error.log*
+
+# local env files
+.web\**\.env.local
+.web\**\.env.development.local
+.web\**\.env.test.local
+.web\**\.env.production.local
+
+# vercel
+.web\**\.vercel
+
+# DS_Store
+.web\**\.DS_Store
+
+# flyctl launch added from habitual_trends\.gitignore
+habitual_trends\**\.web
+habitual_trends\**\.states
+habitual_trends\**\*.db
+habitual_trends\**\*.py[cod]
+habitual_trends\**\__pycache__
+habitual_trends\**\assets\external
+
+# flyctl launch added from habitual_trends\.web\.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+habitual_trends\.web\_static
+
+# dependencies
+habitual_trends\.web\node_modules
+habitual_trends\.web\.pnp
+habitual_trends\.web\**\.pnp.js
+
+# testing
+habitual_trends\.web\coverage
+
+# next.js
+habitual_trends\.web\.next
+habitual_trends\.web\out
+
+# production
+habitual_trends\.web\build
+
+# misc
+habitual_trends\.web\**\.DS_Store
+habitual_trends\.web\**\*.pem
+
+# debug
+habitual_trends\.web\**\npm-debug.log*
+habitual_trends\.web\**\yarn-debug.log*
+habitual_trends\.web\**\yarn-error.log*
+
+# local env files
+habitual_trends\.web\**\.env.local
+habitual_trends\.web\**\.env.development.local
+habitual_trends\.web\**\.env.test.local
+habitual_trends\.web\**\.env.production.local
+
+# vercel
+habitual_trends\.web\**\.vercel
+
+# DS_Store
+habitual_trends\.web\**\.DS_Store
+
+# flyctl launch added from my_app\.gitignore
+my_app\**\.states
+my_app\**\assets\external
+my_app\**\__pycache__
+my_app\**\*.db
+my_app\**\*.py[cod]
+my_app\**\.web
+my_app\**\.streamlit\secrets.toml
+my_app\**\.streamlit\secrets.toml
+my_app\**\__pycache__
+my_app\**\.env
+my_app\**\*.db
+my_app\**\.venv
+# --- Python ---
+my_app\**\__pycache__
+my_app\**\*.py[cod]
+my_app\**\*$py.class
+my_app\**\.venv
+my_app\**\env
+my_app\**\venv
+my_app\**\bin
+my_app\**\lib
+my_app\**\develop-eggs
+my_app\**\dist
+my_app\**\downloads
+my_app\**\eggs
+my_app\**\.installed.cfg
+my_app\**\parts
+my_app\**\sdist
+my_app\**\var
+my_app\**\wheels
+my_app\**\*.egg-info
+
+# --- Streamlit & Secrets (CRITICAL) ---
+my_app\**\.streamlit\secrets.toml
+my_app\**\.streamlit\config.toml
+
+# --- Environment & API Keys ---
+my_app\**\.env
+my_app\**\.flaskenv
+my_app\**\.openai_api_key
+
+# --- Databases ---
+my_app\**\*.db
+my_app\**\*.sqlite3
+
+# --- OS Specific ---
+my_app\**\.DS_Store
+my_app\**\Thumbs.db
+# Python
+my_app\**\.venv
+my_app\**\venv
+my_app\**\.env
+my_app\**\__pycache__
+
+# Rust
+my_app\**\target
+my_app\**\**\*.rs.bk
+
+# IDEs
+my_app\**\.vscode
+my_app\**\*.code-workspace
+
+# Streamlit
+my_app\**\.streamlit\secrets.toml
+# Secrets
+my_app\**\.env
+
+# Rust artifacts
+my_app\target
+my_app\**\Cargo.lock
+
+# Python Virtual Environments
+my_app\**\.venv
+my_app\**\venv
+my_app\**\__pycache__
+
+# IDE & OS files
+my_app\**\.vscode
+my_app\**\*.code-workspace
+my_app\**\.DS_Store
+
+# Streamlit/Temporary files
+my_app\**\.streamlit
+
+# flyctl launch added from my_app\.web\.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+my_app\.web\_static
+
+# dependencies
+my_app\.web\node_modules
+my_app\.web\.pnp
+my_app\.web\**\.pnp.js
+
+# testing
+my_app\.web\coverage
+
+# next.js
+my_app\.web\.next
+my_app\.web\out
+
+# production
+my_app\.web\build
+
+# misc
+my_app\.web\**\.DS_Store
+my_app\.web\**\*.pem
+
+# debug
+my_app\.web\**\npm-debug.log*
+my_app\.web\**\yarn-debug.log*
+my_app\.web\**\yarn-error.log*
+
+# local env files
+my_app\.web\**\.env.local
+my_app\.web\**\.env.development.local
+my_app\.web\**\.env.test.local
+my_app\.web\**\.env.production.local
+
+# vercel
+my_app\.web\**\.vercel
+
+# DS_Store
+my_app\.web\**\.DS_Store
+
+# flyctl launch added from rust-backend\.gitignore
+rust-backend\target
+rust-backend\**\.env
+
+# flyctl launch added from venv\Lib\site-packages\reflex\.templates\web\.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+venv\Lib\site-packages\reflex\.templates\web\_static
+
+# dependencies
+venv\Lib\site-packages\reflex\.templates\web\node_modules
+venv\Lib\site-packages\reflex\.templates\web\.pnp
+venv\Lib\site-packages\reflex\.templates\web\**\.pnp.js
+
+# testing
+venv\Lib\site-packages\reflex\.templates\web\coverage
+
+# next.js
+venv\Lib\site-packages\reflex\.templates\web\.next
+venv\Lib\site-packages\reflex\.templates\web\out
+
+# production
+venv\Lib\site-packages\reflex\.templates\web\build
+
+# misc
+venv\Lib\site-packages\reflex\.templates\web\**\.DS_Store
+venv\Lib\site-packages\reflex\.templates\web\**\*.pem
+
+# debug
+venv\Lib\site-packages\reflex\.templates\web\**\npm-debug.log*
+venv\Lib\site-packages\reflex\.templates\web\**\yarn-debug.log*
+venv\Lib\site-packages\reflex\.templates\web\**\yarn-error.log*
+
+# local env files
+venv\Lib\site-packages\reflex\.templates\web\**\.env.local
+venv\Lib\site-packages\reflex\.templates\web\**\.env.development.local
+venv\Lib\site-packages\reflex\.templates\web\**\.env.test.local
+venv\Lib\site-packages\reflex\.templates\web\**\.env.production.local
+
+# vercel
+venv\Lib\site-packages\reflex\.templates\web\**\.vercel
+
+# DS_Store
+venv\Lib\site-packages\reflex\.templates\web\**\.DS_Store
+fly.toml

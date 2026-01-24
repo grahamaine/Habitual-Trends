@@ -1,7 +1,18 @@
+# Secrets
+.env
+
+# Python Virtual Environments
+venv/
+.venv/
 __pycache__/
-*.db
-assets/external/
-.web
 *.py[cod]
-.states
-/target
+
+# Deployment & Backups
+fly.toml.bak
+
+# IDEs
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store

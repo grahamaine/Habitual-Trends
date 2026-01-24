@@ -1,0 +1,17 @@
+# Web Frameworks
+streamlit
+reflex
+
+# AI & Data Science
+pandas
+numpy
+openai
+langchain
+
+# Backend & Integration
+requests
+python-dotenv
+uvicorn
+
+# Deployment
+gunicorn

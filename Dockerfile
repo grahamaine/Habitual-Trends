@@ -1,44 +1,34 @@
 # --- Stage 1: Build the Rust Backend ---
 FROM rust:1.75-slim as rust-builder
 WORKDIR /app
-COPY . .
-# Build the Rust release binary
-RUN cargo build --release
+COPY ./rust-backend ./rust-backend
+COPY Cargo.lock ./
+# Pre-fetch dependencies to speed up future builds
+RUN cd rust-backend && cargo build --release
 
-# --- Stage 2: Final Runtime Environment ---
-FROM python:3.12-slim
-WORKDIR /app
+# --- Stage 2: Final Runtime Image ---
+FROM python:3.11-slim
 
-# Install system dependencies (including PostgreSQL client)
+# Install system dependencies (needed for many Python/Rust libs)
 RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    gcc \
+    build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Install 'uv' for fast Python dependency management
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
+WORKDIR /app
 
-# Copy Python dependency files
-COPY pyproject.toml ./ 
-# If you have a uv.lock or requirements.txt, uncomment the next line:
-# COPY uv.lock ./ 
+# Copy the Rust binary from Stage 1
+COPY --from=rust-builder /app/rust-backend/target/release/habitual-trends-backend /usr/local/bin/rust-backend
 
-# Install Python dependencies using uv
-RUN uv sync --frozen --no-cache
+# Copy Python requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the compiled Rust binary from Stage 1
-COPY --from=rust-builder /app/target/release/habitual-trends-backend ./backend-engine
-
-# Copy the rest of your application code
+# Copy the rest of the application
 COPY . .
 
-# Expose the port (Fly.io defaults to 8080)
-EXPOSE 8080
+# Expose ports (Streamlit uses 8501, Reflex 8000, Rust custom)
+EXPOSE 8501 8000 8080
 
-# Set environment variables for Gemini and Opik
-ENV PYTHONUNBUFFERED=1
-
-# Start the application 
-# (Swap "streamlit run app.py" for your Reflex/Python entry point)
-CMD ["uv", "run", "streamlit", "run", "app.py", "--server.port", "8080"]
+# Use a startup script to run both services
+CMD ["sh", "-c", "rust-backend & streamlit run habitual_trends/main.py --server.port 8501 --server.address 0.0.0.0"]
