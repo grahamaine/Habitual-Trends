@@ -1,0 +1,22 @@
+# Change this:
+app = "habitual-trends"
+
+# To the real name:
+app = "habitual-trends-snowy-fire-123"
+app = "habitual_trends"
+primary_region = "ams" # Or your chosen region
+
+[deploy]
+  release_command = "./habitual_trends"
+  release_command_timeout = "10m" # Giving it extra time for the Rust build/migration
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory_mb = 512 # Rust is efficient, but LLM processing might need 512MB+
