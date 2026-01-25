@@ -32,3 +32,17 @@ EXPOSE 8501 8000 8080
 
 # Use a startup script to run both services
 CMD ["sh", "-c", "rust-backend & streamlit run habitual_trends/main.py --server.port 8501 --server.address 0.0.0.0"]
+# 1. Use the official Rust image to build the app
+FROM rust:latest
+
+# 2. Set the working directory inside the container
+WORKDIR /usr/src/habitual-trends
+
+# 3. Copy your project files into the container
+COPY . .
+
+# 4. Build the application
+RUN cargo install --path .
+
+# 5. Run the app when the container starts
+CMD ["habitual-trends"]
