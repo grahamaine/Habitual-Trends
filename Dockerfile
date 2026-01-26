@@ -1,48 +1,52 @@
-# --- Stage 1: Build the Rust Backend ---
-FROM rust:1.75-slim as rust-builder
-WORKDIR /app
-COPY ./rust-backend ./rust-backend
-COPY Cargo.lock ./
-# Pre-fetch dependencies to speed up future builds
-RUN cd rust-backend && cargo build --release
+# Stage 1: Build the Application
+# We use python:3.12-slim as the base for building and installing dependencies.
+FROM python:3.12-slim AS build
 
-# --- Stage 2: Final Runtime Image ---
-FROM python:3.11-slim
+# Set the working directory inside the container
+WORKDIR /usr/src/app
 
-# Install system dependencies (needed for many Python/Rust libs)
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# Install system dependencies needed for building Python packages
+RUN apt-get update && apt-get install -y --no-install-recommends     build-essential     gcc     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+# Create a virtual environment
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
-# Copy the Rust binary from Stage 1
-COPY --from=rust-builder /app/rust-backend/target/release/habitual-trends-backend /usr/local/bin/rust-backend
+# Copy requirements.txt if it exists (using wildcard to avoid build failure)
+COPY requirements.tx[t] ./requirements.txt
 
-# Copy Python requirements and install
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies only if requirements.txt exists
+RUN pip install --upgrade pip &&     if [ -f requirements.txt ]; then         pip install -r requirements.txt;     fi
 
-# Copy the rest of the application
+# Copy the rest of the application source code
 COPY . .
 
-# Expose ports (Streamlit uses 8501, Reflex 8000, Rust custom)
-EXPOSE 8501 8000 8080
+# Stage 2: Create the Final Production Image
+# We use python:3.12-slim as a minimal runtime image.
+FROM python:3.12-slim
 
-# Use a startup script to run both services
-CMD ["sh", "-c", "rust-backend & streamlit run habitual_trends/main.py --server.port 8501 --server.address 0.0.0.0"]
-# 1. Use the official Rust image to build the app
-FROM rust:latest
+# Set the working directory
+WORKDIR /usr/src/app
 
-# 2. Set the working directory inside the container
-WORKDIR /usr/src/habitual-trends
+# Install only runtime dependencies if needed
+RUN apt-get update && apt-get install -y --no-install-recommends     libpq5     && rm -rf /var/lib/apt/lists/*
 
-# 3. Copy your project files into the container
-COPY . .
+# Copy the virtual environment from the build stage
+COPY --from=build /opt/venv /opt/venv
 
-# 4. Build the application
-RUN cargo install --path .
+# Copy the application code
+COPY --from=build /usr/src/app .
 
-# 5. Run the app when the container starts
-CMD ["habitual-trends"]
+# Set the virtual environment as the active Python environment
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Create a non-root user to run the application
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /usr/src/app
+USER appuser
+
+# Expose the port your app runs on
+ENV PORT=8080
+EXPOSE $PORT
+
+# Define the command to start your application
+CMD ["python", "app.py"]
