@@ -1,82 +1,60 @@
-# Python cache files
+# -----------------------------
+# Security & Secrets (CRITICAL)
+# -----------------------------
+.env
+.env.*
+.streamlit/secrets.toml
+**/*.env
+**/.env
+fly.toml.bak
+
+# -----------------------------
+# Python / Virtual Environments
+# -----------------------------
+# Ignore local virtual envs (Docker creates its own)
+venv/
+.venv/
+env/
+ENV/
+
+# Ignore compiled python files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
 
-# Virtual environments
-venv/
-env/
-ENV/
-.venv
-.ENV
+# -----------------------------
+# Reflex / Frontend Build Artifacts
+# -----------------------------
+# We ignore .web because Docker should build the frontend fresh
+.web/
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+bun.lockb
 
-# Distribution / packaging
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# -----------------------------
+# Rust Backend (If applicable)
+# -----------------------------
+# Ignore heavy Rust build artifacts
+rust-backend/target/
+target/
 
-# Testing
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
-
-# pyenv
-.python-version
-
-# Project files
-.git
+# -----------------------------
+# Version Control & IDEs
+# -----------------------------
+.git/
 .gitignore
 .dockerignore
-Dockerfile
-fly.toml
-README.md
-docs/
-
-# IDEs
 .vscode/
 .idea/
 *.swp
-*.swo
 .DS_Store
 
-# Environment files
-.env
-.env.local
-.env.*.local
-
-# Logs
-*.log
-logs/
-
-# Temporary files
-tmp/
-temp/
+# -----------------------------
+# Documentation & Misc
+# -----------------------------
+README.md
+SECURITY.md
+Dockerfiler

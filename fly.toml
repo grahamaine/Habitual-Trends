@@ -1,10 +1,15 @@
 # fly.toml app configuration file generated for habitual-trends-akdc9g on 2026-01-26T09:30:32Z
+# fly.toml app configuration file generated for habitual-trends-akdc9g on 2026-01-26T10:09:53Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'habitual-trends-akdc9g'
+<<<<<<< HEAD
 primary_region = 'ams'
+=======
+primary_region = 'jnb'
+>>>>>>> e62bd8ecca84d86e5c3958f2a32fa3ae4e2f198e
 
 [build]
 
@@ -20,5 +25,9 @@ primary_region = 'ams'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
+<<<<<<< HEAD
   memory_mb = 256
 
+=======
+  memory_mb = 1024
+>>>>>>> e62bd8ecca84d86e5c3958f2a32fa3ae4e2f198e

@@ -1,0 +1,7 @@
+
+reflex==0.8.26
+streamlit
+pandas
+plotly
+openai
+sqlalchemy

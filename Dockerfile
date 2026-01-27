@@ -1,52 +1,46 @@
-# Stage 1: Build the Application
-# We use python:3.12-slim as the base for building and installing dependencies.
-FROM python:3.12-slim AS build
+# Stage 1: Base image with Python and Node.js
+FROM python:3.11-slim-bookworm
 
-# Set the working directory inside the container
-WORKDIR /usr/src/app
+# Set environment variables to prevent Python from buffering output
+# and to avoid writing .pyc files
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
 
-# Install system dependencies needed for building Python packages
-RUN apt-get update && apt-get install -y --no-install-recommends     build-essential     gcc     && rm -rf /var/lib/apt/lists/*
+# Install system dependencies
+# Node.js and npm are required for Reflex to build the frontend
+# curl/unzip are often needed for downloading assets
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    npm \
+    curl \
+    unzip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
 
-# Create a virtual environment
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+# Set the working directory in the container
+WORKDIR /app
 
-# Copy requirements.txt if it exists (using wildcard to avoid build failure)
-COPY requirements.tx[t] ./requirements.txt
+# Copy the python requirements first to leverage Docker cache
+COPY requirements.txt .
 
-# Install Python dependencies only if requirements.txt exists
-RUN pip install --upgrade pip &&     if [ -f requirements.txt ]; then         pip install -r requirements.txt;     fi
+# Install Python dependencies
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application source code
+# Copy the rest of the application code
 COPY . .
 
-# Stage 2: Create the Final Production Image
-# We use python:3.12-slim as a minimal runtime image.
-FROM python:3.12-slim
+# Initialize Reflex (creates necessary config if missing) and build the frontend
+# We use --frontend-only export to prepare the static assets
+RUN reflex init
+RUN reflex export --frontend-only --no-zip
 
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Install only runtime dependencies if needed
-RUN apt-get update && apt-get install -y --no-install-recommends     libpq5     && rm -rf /var/lib/apt/lists/*
-
-# Copy the virtual environment from the build stage
-COPY --from=build /opt/venv /opt/venv
-
-# Copy the application code
-COPY --from=build /usr/src/app .
-
-# Set the virtual environment as the active Python environment
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Create a non-root user to run the application
-RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /usr/src/app
-USER appuser
-
-# Expose the port your app runs on
+# Expose the port that Fly.io (or your host) expects
+# Reflex defaults: Backend 8000, Frontend 3000. 
+# We expose 8080 as a common standard for container runners.
 ENV PORT=8080
-EXPOSE $PORT
+EXPOSE 8080
 
-# Define the command to start your application
-CMD ["python", "app.py"]
+# Command to run the application in production mode
+# This runs the backend and serves the frontend assets
+CMD ["reflex", "run", "--env", "prod", "--backend-host", "0.0.0.0", "--backend-port", "8080"]

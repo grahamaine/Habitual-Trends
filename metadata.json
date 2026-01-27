@@ -1,0 +1,9 @@
+{
+  "name": "Habitual Trends",
+  "description": "An AI-powered wellness companion for sustainable fitness, stress management, sleep optimization, and mental health. Features include high-resolution image generation, intelligent wellness chatting, and real-time location-based wellness discoveries.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

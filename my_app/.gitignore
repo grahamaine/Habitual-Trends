@@ -1,0 +1,83 @@
+.states
+assets/external/
+__pycache__/
+*.db
+*.py[cod]
+.web
+.streamlit/secrets.toml
+.streamlit/secrets.toml
+__pycache__/
+.env
+*.db
+.venv/
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+bin/
+lib/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.installed.cfg
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# --- Streamlit & Secrets (CRITICAL) ---
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# --- Environment & API Keys ---
+.env
+.flaskenv
+.openai_api_key
+
+# --- Databases ---
+*.db
+*.sqlite3
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+# Python
+.venv/
+venv/
+.env
+__pycache__/
+
+# Rust
+target/
+**/*.rs.bk
+
+# IDEs
+.vscode/
+*.code-workspace
+
+# Streamlit
+.streamlit/secrets.toml
+# Secrets
+.env
+
+# Rust artifacts
+/target
+Cargo.lock
+
+# Python Virtual Environments
+.venv/
+venv/
+__pycache__/
+
+# IDE & OS files
+.vscode/
+*.code-workspace
+.DS_Store
+
+# Streamlit/Temporary files
+.streamlit/
