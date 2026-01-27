@@ -12,3 +12,13 @@ assets/external/
 # already existing elements were commented out
 
 #/target
+.env
+# Local env files
+.env
+.env.local
+.env.*.local
+.env
+__pycache__/
+*.pyc
+node_modules/
+.DS_Store

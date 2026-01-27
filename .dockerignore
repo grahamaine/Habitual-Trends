@@ -1,262 +1,82 @@
-# flyctl launch added from habitual-trends\.gitignore
-habitual-trends\**\__pycache__
-habitual-trends\**\*.db
-habitual-trends\**\assets\external
-habitual-trends\**\.web
-habitual-trends\**\*.py[cod]
-habitual-trends\**\.states
-habitual-trends\target
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+.ENV
 
-# Added by cargo
-#
-# already existing elements were commented out
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-#/target
+# Testing
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
 
-# flyctl launch added from habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\.gitignore
-# Logs
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\logs
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.log
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\npm-debug.log*
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\yarn-debug.log*
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\yarn-error.log*
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\pnpm-debug.log*
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\lerna-debug.log*
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
 
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\node_modules
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\dist
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\dist-ssr
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.local
+# pyenv
+.python-version
 
-# Editor directories and files
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\.vscode\*
-!habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\.vscode\extensions.json
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\.idea
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\.DS_Store
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.suo
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.ntvs*
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.njsproj
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.sln
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\*.sw?
-
-habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\.yarn
-
-!habitual-trends\.venv\Lib\site-packages\langserve\chat_playground\**\dist
-
-# flyctl launch added from habitual-trends\.venv\Lib\site-packages\langserve\playground\.gitignore
-# Logs
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\logs
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.log
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\npm-debug.log*
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\yarn-debug.log*
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\yarn-error.log*
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\pnpm-debug.log*
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\lerna-debug.log*
-
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\node_modules
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\dist
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\dist-ssr
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.local
-
-# Editor directories and files
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\.vscode\*
-!habitual-trends\.venv\Lib\site-packages\langserve\playground\**\.vscode\extensions.json
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\.idea
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\.DS_Store
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.suo
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.ntvs*
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.njsproj
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.sln
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\*.sw?
-
-habitual-trends\.venv\Lib\site-packages\langserve\playground\**\.yarn
-
-!habitual-trends\.venv\Lib\site-packages\langserve\playground\**\dist
-
-# flyctl launch added from habitual-trends\.venv\Lib\site-packages\litellm\proxy\.gitignore
-habitual-trends\.venv\Lib\site-packages\litellm\proxy\**\.env
-habitual-trends\.venv\Lib\site-packages\litellm\proxy\**\secrets.toml
-
-# flyctl launch added from habitual-trends\.web\.gitignore
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-habitual-trends\.web\_static
-
-# dependencies
-habitual-trends\.web\node_modules
-habitual-trends\.web\.pnp
-habitual-trends\.web\**\.pnp.js
-
-# testing
-habitual-trends\.web\coverage
-
-# next.js
-habitual-trends\.web\.next
-habitual-trends\.web\out
-
-# production
-habitual-trends\.web\build
-
-# misc
-habitual-trends\.web\**\.DS_Store
-habitual-trends\.web\**\*.pem
-
-# debug
-habitual-trends\.web\**\npm-debug.log*
-habitual-trends\.web\**\yarn-debug.log*
-habitual-trends\.web\**\yarn-error.log*
-
-# local env files
-habitual-trends\.web\**\.env.local
-habitual-trends\.web\**\.env.development.local
-habitual-trends\.web\**\.env.test.local
-habitual-trends\.web\**\.env.production.local
-
-# vercel
-habitual-trends\.web\**\.vercel
-
-# DS_Store
-habitual-trends\.web\**\.DS_Store
-
-# flyctl launch added from habitual-trends\habitual_trends\.gitignore
-habitual-trends\habitual_trends\**\.web
-habitual-trends\habitual_trends\**\.states
-habitual-trends\habitual_trends\**\*.db
-habitual-trends\habitual_trends\**\*.py[cod]
-habitual-trends\habitual_trends\**\__pycache__
-habitual-trends\habitual_trends\**\assets\external
-
-# flyctl launch added from habitual-trends\my_app\.gitignore
-habitual-trends\my_app\**\.states
-habitual-trends\my_app\**\assets\external
-habitual-trends\my_app\**\__pycache__
-habitual-trends\my_app\**\*.db
-habitual-trends\my_app\**\*.py[cod]
-habitual-trends\my_app\**\.web
-habitual-trends\my_app\**\.streamlit\secrets.toml
-habitual-trends\my_app\**\.streamlit\secrets.toml
-habitual-trends\my_app\**\__pycache__
-habitual-trends\my_app\**\.env
-habitual-trends\my_app\**\*.db
-habitual-trends\my_app\**\.venv
-# --- Python ---
-habitual-trends\my_app\**\__pycache__
-habitual-trends\my_app\**\*.py[cod]
-habitual-trends\my_app\**\*$py.class
-habitual-trends\my_app\**\.venv
-habitual-trends\my_app\**\env
-habitual-trends\my_app\**\venv
-habitual-trends\my_app\**\bin
-habitual-trends\my_app\**\lib
-habitual-trends\my_app\**\develop-eggs
-habitual-trends\my_app\**\dist
-habitual-trends\my_app\**\downloads
-habitual-trends\my_app\**\eggs
-habitual-trends\my_app\**\.installed.cfg
-habitual-trends\my_app\**\parts
-habitual-trends\my_app\**\sdist
-habitual-trends\my_app\**\var
-habitual-trends\my_app\**\wheels
-habitual-trends\my_app\**\*.egg-info
-
-# --- Streamlit & Secrets (CRITICAL) ---
-habitual-trends\my_app\**\.streamlit\secrets.toml
-habitual-trends\my_app\**\.streamlit\config.toml
-
-# --- Environment & API Keys ---
-habitual-trends\my_app\**\.env
-habitual-trends\my_app\**\.flaskenv
-habitual-trends\my_app\**\.openai_api_key
-
-# --- Databases ---
-habitual-trends\my_app\**\*.db
-habitual-trends\my_app\**\*.sqlite3
-
-# --- OS Specific ---
-habitual-trends\my_app\**\.DS_Store
-habitual-trends\my_app\**\Thumbs.db
-# Python
-habitual-trends\my_app\**\.venv
-habitual-trends\my_app\**\venv
-habitual-trends\my_app\**\.env
-habitual-trends\my_app\**\__pycache__
-
-# Rust
-habitual-trends\my_app\**\target
-habitual-trends\my_app\**\**\*.rs.bk
+# Project files
+.git
+.gitignore
+.dockerignore
+Dockerfile
+fly.toml
+README.md
+docs/
 
 # IDEs
-habitual-trends\my_app\**\.vscode
-habitual-trends\my_app\**\*.code-workspace
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
 
-# Streamlit
-habitual-trends\my_app\**\.streamlit\secrets.toml
-# Secrets
-habitual-trends\my_app\**\.env
+# Environment files
+.env
+.env.local
+.env.*.local
 
-# Rust artifacts
-habitual-trends\my_app\target
-habitual-trends\my_app\**\Cargo.lock
+# Logs
+*.log
+logs/
 
-# Python Virtual Environments
-habitual-trends\my_app\**\.venv
-habitual-trends\my_app\**\venv
-habitual-trends\my_app\**\__pycache__
-
-# IDE & OS files
-habitual-trends\my_app\**\.vscode
-habitual-trends\my_app\**\*.code-workspace
-habitual-trends\my_app\**\.DS_Store
-
-# Streamlit/Temporary files
-habitual-trends\my_app\**\.streamlit
-
-# flyctl launch added from habitual-trends\rust-backend\.gitignore
-habitual-trends\rust-backend\target
-habitual-trends\rust-backend\**\.env
-
-# flyctl launch added from habitual-trends\venv\Lib\site-packages\reflex\.templates\web\.gitignore
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\_static
-
-# dependencies
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\node_modules
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\.pnp
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.pnp.js
-
-# testing
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\coverage
-
-# next.js
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\.next
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\out
-
-# production
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\build
-
-# misc
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.DS_Store
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\*.pem
-
-# debug
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\npm-debug.log*
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\yarn-debug.log*
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\yarn-error.log*
-
-# local env files
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.env.local
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.env.development.local
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.env.test.local
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.env.production.local
-
-# vercel
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.vercel
-
-# DS_Store
-habitual-trends\venv\Lib\site-packages\reflex\.templates\web\**\.DS_Store
-
-# flyctl launch added from habitual_trends\.gitignore
-habitual_trends\target
-fly.toml
+# Temporary files
+tmp/
+temp/
