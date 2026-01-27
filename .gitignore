@@ -5,7 +5,11 @@ assets/external/
 *.py[cod]
 .states
 /target
-
+# .gitignore file content
+.env
+__pycache__/
+venv/
+.DS_Store
 
 # Added by cargo
 #
